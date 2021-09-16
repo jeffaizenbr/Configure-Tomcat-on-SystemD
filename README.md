@@ -1,12 +1,12 @@
 # Configure-Tomcat-on-SystemD
 
 
-1 - Access the path below
+1 - Access the path below:
 /etc/systemd/system
 
 
-2 - create the file "tomcat.service" 
-bash```
+2 - create the file "tomcat.service" don't forget to edit the Environments paths:
+```bash
 [Unit]
 Description=Tomcat app
 After=syslog.target network.target
@@ -34,4 +34,8 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
+3 - After that execute the command below: 
 
+```bash
+systemctl daemon-reload
+```
